@@ -2,6 +2,7 @@ defmodule Nerves.UsbAutomount.Device do
   @moduledoc false
 
   use GenServer
+  alias Nerves.UsbAutomount.Types.Device
 
   require Logger
 
@@ -11,15 +12,12 @@ defmodule Nerves.UsbAutomount.Device do
     @enforce_keys [:device]
     defstruct device: nil,
               mounted: false,
-              uuid: nil,
-              type: nil,
-              label: "UNKNOWN",
               mount_point: nil
   end
 
   @doc false
-  def start_link(device) do
-    GenServer.start_link(__MODULE__, %State{device: device})
+  def start_link(device) when is_binary(device) do
+    GenServer.start_link(__MODULE__, %State{device: %Device{device: device}})
   end
 
   def init(%State{device: device} = state), do: {:ok, state}
