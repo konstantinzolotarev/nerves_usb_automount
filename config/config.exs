@@ -8,5 +8,5 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
-config :nerves_usb_automount, mount_dir: "/media"
+config :nerves_usb_automount, mount_dir: "/tmp", mount_options: "defaults"
 
