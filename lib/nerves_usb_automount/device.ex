@@ -34,7 +34,7 @@ defmodule Nerves.UsbAutomount.Device do
   Usage:
   ```elixir
   iex(2)> "/dev/sdb1: LABEL=\"UNTITLED\" UUID=\"08FB-E2C7\" TYPE=\"vfat\"" |> Nerves.UsbAutomount.Device.blkid_parse()
-  {:ok, %{device: "/dev/sdb1", label: "UNTITLED", type: "vfat", uuid: "08FB-E2C7"}}
+  {:ok, %Nerves.UsbAutomount.Types.Device{device: "/dev/sdb1", label: "UNTITLED", type: "vfat", uuid: "08FB-E2C7"}}
   ```
   """
   @spec blkid_parse(binary) :: {:ok, Nerves.UsbAutomount.Types.Device.t()} | {:error, term}
@@ -63,5 +63,10 @@ defmodule Nerves.UsbAutomount.Device do
       _ ->
         nil
     end
+  end
+
+  defp mount(%Device{device: dev, uuid: uuid}) do
+    
+    {:ok, ""}
   end
 end
