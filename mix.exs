@@ -1,4 +1,4 @@
-defmodule NervesUsbAutomount.MixProject do
+defmodule Nerves.UsbAutomount.MixProject do
   use Mix.Project
 
   @version "0.1.0"
@@ -24,7 +24,7 @@ defmodule NervesUsbAutomount.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {NervesUsbAutomount.Application, []}
+      mod: {Nerves.UsbAutomount.Application, []}
     ]
   end
 

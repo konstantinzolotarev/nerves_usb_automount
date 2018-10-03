@@ -1,4 +1,4 @@
-# NervesUsbAutomount
+# Nerves.UsbAutomount
 
 **TODO: Add description**
 

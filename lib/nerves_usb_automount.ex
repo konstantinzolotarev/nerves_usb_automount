@@ -1,6 +1,5 @@
-defmodule NervesUsbAutomount do
+defmodule Nerves.UsbAutomount do
   @moduledoc """
-  Documentation for NervesUsbAutomount.
+  Documentation for Nerves.UsbAutomount.
   """
-
 end

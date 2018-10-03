@@ -1,5 +1,5 @@
-defmodule NervesUsbAutomountTest do
+defmodule Nerves.UsbAutomountTest do
   use ExUnit.Case
-  doctest NervesUsbAutomount
+  doctest Nerves.UsbAutomount
 
 end
