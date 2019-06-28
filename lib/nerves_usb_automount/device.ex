@@ -19,7 +19,7 @@ defmodule Nerves.UsbAutomount.Device do
   end
 
   @doc false
-  def start_link(device) when is_binary(device) do
+  def start_link(%Device{uuid: uuid} = device) when is_binary(device) do
     GenServer.start_link(__MODULE__, %State{device: %Device{device: device}})
   end
 
@@ -137,6 +137,11 @@ defmodule Nerves.UsbAutomount.Device do
     |> Path.absname()
     |> umount()
   end
+
+  #
+  # Private functions
+  #
+
 
   # Pick required part value from blkid string
   defp blkid_pick(part, string) do
